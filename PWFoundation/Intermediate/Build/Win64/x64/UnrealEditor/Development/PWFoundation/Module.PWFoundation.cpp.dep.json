@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\gamerepos\\projects - ue5\\projectwtps\\plugins\\pwfoundation\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\pwfoundation\\module.pwfoundation.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\gamerepos\\projects - ue5\\projectwtps\\intermediate\\build\\win64\\x64\\projectwtpseditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "d:\\gamerepos\\projects - ue5\\projectwtps\\plugins\\pwfoundation\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\pwfoundation\\definitions.pwfoundation.h",
+            "d:\\gamerepos\\projects - ue5\\projectwtps\\plugins\\pwfoundation\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\pwfoundation\\permoduleinline.gen.cpp",
+            "c:\\program files\\epic games\\ue_5.6\\engine\\source\\runtime\\core\\public\\hal\\permoduleinline.inl"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
