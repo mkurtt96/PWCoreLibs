@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\gamerepos\\projects - ue5\\projectwtps\\plugins\\pwlogging\\source\\pwlogging\\private\\logconfig.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\gamerepos\\projects - ue5\\projectwtps\\intermediate\\build\\win64\\x64\\projectwtpseditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "d:\\gamerepos\\projects - ue5\\projectwtps\\plugins\\pwlogging\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\pwlogging\\definitions.pwlogging.h",
+            "d:\\gamerepos\\projects - ue5\\projectwtps\\plugins\\pwlogging\\source\\pwlogging\\public\\logconfig.h",
+            "d:\\gamerepos\\projects - ue5\\projectwtps\\plugins\\pwlogging\\intermediate\\build\\win64\\unrealeditor\\inc\\pwlogging\\uht\\logconfig.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
