@@ -1,0 +1,14 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.PWSharedTypes.cpp.obj": [
+			"MultiDataArray.gen.cpp.obj",
+			"PWSharedTypes.init.gen.cpp.obj",
+			"SpellParams.gen.cpp.obj",
+			"PerModuleInline.gen.cpp.obj",
+			"SpellParams.cpp.obj",
+			"MultiDataArray.cpp.obj",
+			"PWSharedTypes.cpp.obj"
+		]
+	}
+}

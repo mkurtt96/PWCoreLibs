@@ -1,0 +1,15 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-PWSharedTypes-0002.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:/GameRepos/Projects - ue5/ProjectWTps/Intermediate/Build/Win64/x64/ProjectWTpsEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.h.obj"
+"D:/GameRepos/Projects - ue5/ProjectWTps/Plugins/PWSharedTypes/Intermediate/Build/Win64/x64/UnrealEditor/Development/PWSharedTypes/Module.PWSharedTypes.cpp.obj"
+"D:/GameRepos/Projects - ue5/ProjectWTps/Plugins/PWSharedTypes/Intermediate/Build/Win64/x64/UnrealEditor/Development/PWSharedTypes/MultiDataArray.cpp.obj"
+"D:/GameRepos/Projects - ue5/ProjectWTps/Plugins/PWSharedTypes/Intermediate/Build/Win64/x64/UnrealEditor/Development/PWSharedTypes/PWSharedTypes.cpp.obj"
+"D:/GameRepos/Projects - ue5/ProjectWTps/Plugins/PWSharedTypes/Intermediate/Build/Win64/x64/UnrealEditor/Development/PWSharedTypes/SpellParams.cpp.obj"
+"D:/GameRepos/Projects - ue5/ProjectWTps/Plugins/PWSharedTypes/Intermediate/Build/Win64/x64/UnrealEditor/Development/PWSharedTypes/Default.rc2.res"
+/OUT:"D:/GameRepos/Projects - ue5/ProjectWTps/Plugins/PWSharedTypes/Intermediate/Build/Win64/x64/UnrealEditor/Development/PWSharedTypes/UnrealEditor-PWSharedTypes-0002.lib"

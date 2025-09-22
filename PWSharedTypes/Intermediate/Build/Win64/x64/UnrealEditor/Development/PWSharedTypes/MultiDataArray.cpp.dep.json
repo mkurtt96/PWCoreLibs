@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\gamerepos\\projects - ue5\\projectwtps\\plugins\\pwsharedtypes\\source\\pwsharedtypes\\private\\multidataarray.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\gamerepos\\projects - ue5\\projectwtps\\intermediate\\build\\win64\\x64\\projectwtpseditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "d:\\gamerepos\\projects - ue5\\projectwtps\\plugins\\pwsharedtypes\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\pwsharedtypes\\definitions.pwsharedtypes.h",
+            "d:\\gamerepos\\projects - ue5\\projectwtps\\plugins\\pwsharedtypes\\source\\pwsharedtypes\\public\\multidataarray.h",
+            "d:\\gamerepos\\projects - ue5\\projectwtps\\plugins\\pwsharedtypes\\intermediate\\build\\win64\\unrealeditor\\inc\\pwsharedtypes\\uht\\multidataarray.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
