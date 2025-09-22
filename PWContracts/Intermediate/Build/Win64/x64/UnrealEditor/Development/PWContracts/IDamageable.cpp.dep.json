@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\gamerepos\\projects - ue5\\projectwtps\\plugins\\pwcontracts\\source\\pwcontracts\\private\\ability\\idamageable.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\gamerepos\\projects - ue5\\projectwtps\\intermediate\\build\\win64\\x64\\projectwtpseditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "d:\\gamerepos\\projects - ue5\\projectwtps\\plugins\\pwcontracts\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\pwcontracts\\definitions.pwcontracts.h",
+            "d:\\gamerepos\\projects - ue5\\projectwtps\\plugins\\pwcontracts\\source\\pwcontracts\\public\\ability\\idamageable.h",
+            "d:\\gamerepos\\projects - ue5\\projectwtps\\plugins\\pwcontracts\\intermediate\\build\\win64\\unrealeditor\\inc\\pwcontracts\\uht\\idamageable.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
