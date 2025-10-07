@@ -64,8 +64,9 @@ PW.CoreLibs establishes a **modular, dependency-safe foundation** with minimal c
 
 ## 📄 License
 
-Licensed under the **MIT License**.  
-See the `LICENSE` file for full details.
+
+This project is licensed under the **MIT License**.  
+See the [LICENSE](LICENSE) file for full details.
 
 ---
 
