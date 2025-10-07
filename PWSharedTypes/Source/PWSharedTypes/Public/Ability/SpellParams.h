@@ -36,9 +36,9 @@ public:
 	UPROPERTY(BlueprintReadOnly, ReplicatedUsing=OnRep_UniqueId)
 	FUniqueNetIdRepl SourcePlayerUniqueId = FUniqueNetIdRepl();
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(Bitmask, BitmaskEnum="/Script/PWSharedTypes.ERelationMask"), Replicated)
-	uint8 TargetCollisionTypes = (uint8)ERelationMask::All;
+	uint8 TargetCollisionMask = (uint8)ERelationMask::All;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(Bitmask, BitmaskEnum="/Script/PWSharedTypes.ERelationMask"))
-	uint8 TargetEffectTypes = (uint8)ERelationMask::All;
+	uint8 TargetEffectMask = (uint8)ERelationMask::All;
 	UPROPERTY(BlueprintReadWrite, Replicated)
 	float AbilityLevel = 0;
 

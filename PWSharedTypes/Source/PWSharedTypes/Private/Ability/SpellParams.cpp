@@ -12,7 +12,7 @@ void USpellParamsBase::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Out
 	UObject::GetLifetimeReplicatedProps(OutLifetimeProps);
 
 	DOREPLIFETIME_CONDITION(USpellParamsBase, SourcePlayerUniqueId, COND_InitialOnly);
-	DOREPLIFETIME_CONDITION(USpellParamsBase, TargetCollisionTypes, COND_InitialOnly);
+	DOREPLIFETIME_CONDITION(USpellParamsBase, TargetCollisionMask, COND_InitialOnly);
 	DOREPLIFETIME_CONDITION(USpellParamsBase, AbilityLevel, COND_InitialOnly);
 }
 
