@@ -1,5 +1,11 @@
 # 🧱 PW.CoreLibs
 
+> ⚠️ **Development Status:**  
+> This module is currently being extracted and refactored from **ProjectW**, a private Unreal Engine 5 prototype.  
+> While most systems are functional, interfaces and folder structures may still change as the refactor progresses.  
+> The goal is to make this a clean, reusable, standalone module for future Unreal projects.  
+
+
 **PW.CoreLibs** is the foundational framework layer used across all PW modules.  
 It provides essential shared types, data containers, interfaces, logging utilities, input extensions, and core runtime helpers for Unreal Engine 5 projects.
 
