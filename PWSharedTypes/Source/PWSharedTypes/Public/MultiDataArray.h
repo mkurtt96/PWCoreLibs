@@ -31,7 +31,7 @@ struct PWSHAREDTYPES_API FMultiDataValue
 	}
 };
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, Blueprintable)
 class PWSHAREDTYPES_API UMultiDataArray : public UObject
 {
 	GENERATED_BODY()

@@ -23,26 +23,27 @@ ENUM_CLASS_FLAGS(ERelationMask)
 /**
  * 
  */
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, Blueprintable)
 class PWSHAREDTYPES_API USpellParamsBase : public UObject
 {
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(BlueprintReadWrite)
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite)
 	TObjectPtr<AActor> SourceAvatar = nullptr;
-	UPROPERTY(BlueprintReadWrite)
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite)
 	TObjectPtr<AActor> ActorHit = nullptr;
-	UPROPERTY(BlueprintReadOnly, ReplicatedUsing=OnRep_UniqueId)
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, ReplicatedUsing=OnRep_UniqueId)
 	FUniqueNetIdRepl SourcePlayerUniqueId = FUniqueNetIdRepl();
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Replicated)
+	float AbilityLevel = 0;
+    
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(Bitmask, BitmaskEnum="/Script/PWSharedTypes.ERelationMask"), Replicated)
 	uint8 TargetCollisionMask = (uint8)ERelationMask::All;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(Bitmask, BitmaskEnum="/Script/PWSharedTypes.ERelationMask"))
 	uint8 TargetEffectMask = (uint8)ERelationMask::All;
-	UPROPERTY(BlueprintReadWrite, Replicated)
-	float AbilityLevel = 0;
 
-	UPROPERTY(BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TObjectPtr<UMultiDataArray> More = nullptr;
 
 	UFUNCTION()
