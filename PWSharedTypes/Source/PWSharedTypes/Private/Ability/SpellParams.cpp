@@ -4,19 +4,29 @@
 #include "Ability/SpellParams.h"
 
 #include "GameFramework/GameState.h"
-#include "GameFramework/PlayerState.h"
 #include "Net/UnrealNetwork.h"
 
-void USpellParamsBase::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+
+void USpellParams::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
 {
 	UObject::GetLifetimeReplicatedProps(OutLifetimeProps);
 
-	DOREPLIFETIME_CONDITION(USpellParamsBase, SourcePlayerUniqueId, COND_InitialOnly);
-	DOREPLIFETIME_CONDITION(USpellParamsBase, TargetCollisionMask, COND_InitialOnly);
-	DOREPLIFETIME_CONDITION(USpellParamsBase, AbilityLevel, COND_InitialOnly);
+	DOREPLIFETIME_CONDITION(USpellParams, SourcePlayerUniqueId, COND_InitialOnly);
+	DOREPLIFETIME_CONDITION(USpellParams, TargetCollisionMask, COND_InitialOnly);
+	DOREPLIFETIME_CONDITION(USpellParams, AbilityLevel, COND_InitialOnly);
 }
 
-void USpellParamsBase::OnRep_UniqueId()
+USpellParamsExtension* USpellParams::GetExtensionByClass(TSubclassOf<USpellParamsExtension> ExtensionClass) const
+{
+	for (const TObjectPtr<USpellParamsExtension>& Ext : Extensions)
+	{
+		if (Ext && Ext->IsA(ExtensionClass))
+			return Ext;
+	}
+	return nullptr;
+}
+
+void USpellParams::OnRep_UniqueId()
 {
 	const UObject* Outer = GetOuter();
 	const UWorld* World = Outer->GetWorld();

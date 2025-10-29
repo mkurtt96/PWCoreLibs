@@ -18,5 +18,5 @@ class PWCONTRACTS_API IEffectable
 
 public:
 	UFUNCTION(BlueprintNativeEvent, Category="Hit")
-	bool ApplyEffects(class USpellParamsBase* Params);
+	bool ApplyEffects(class USpellParams* Params);
 };

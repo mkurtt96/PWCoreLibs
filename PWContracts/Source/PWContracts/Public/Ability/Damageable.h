@@ -18,5 +18,5 @@ class PWCONTRACTS_API IDamageable
 
 public:
 	UFUNCTION(BlueprintNativeEvent, Category="Damage")
-	bool ApplyDamage(class USpellParamsBase* Params);
+	bool ApplyDamage(class USpellParams* Params);
 };
