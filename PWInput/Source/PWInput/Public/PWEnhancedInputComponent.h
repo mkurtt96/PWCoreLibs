@@ -16,11 +16,11 @@ class PWINPUT_API UPWEnhancedInputComponent : public UEnhancedInputComponent
 public:
 
 	template<class UserClass, typename PressedFuncType, typename ReleasedFuncType, typename HeldFuncType>
-	void BindAbilityActions(const UPWInputConfig* InputConfig, UserClass* Object, PressedFuncType PressedFunc, ReleasedFuncType ReleasedFunc, HeldFuncType HeldFunc);
+	void BindAbilityActions(const UPWInputConfig* InputConfig, UserClass* Object, PressedFuncType TriggeredFunc, ReleasedFuncType StartedFunc, HeldFuncType OngoingFunc, HeldFuncType CanceledFunc, HeldFuncType CompletedFunc);
 };
 
 template <class UserClass, typename PressedFuncType, typename ReleasedFuncType, typename HeldFuncType>
-void UPWEnhancedInputComponent::BindAbilityActions(const UPWInputConfig* InputConfig, UserClass* Object, PressedFuncType PressedFunc, ReleasedFuncType ReleasedFunc, HeldFuncType HeldFunc)
+void UPWEnhancedInputComponent::BindAbilityActions(const UPWInputConfig* InputConfig, UserClass* Object, PressedFuncType TriggeredFunc, ReleasedFuncType StartedFunc, HeldFuncType OngoingFunc, HeldFuncType CanceledFunc, HeldFuncType CompletedFunc)
 {
 	check(InputConfig);
 
@@ -28,17 +28,25 @@ void UPWEnhancedInputComponent::BindAbilityActions(const UPWInputConfig* InputCo
 	{
 		if (Action.Value && Action.Key.IsValid())
 		{
-			if (PressedFunc)
+			if (TriggeredFunc)
 			{
-				BindAction(Action.Value, ETriggerEvent::Started, Object, PressedFunc, Action.Key);
+				BindAction(Action.Value, ETriggerEvent::Triggered, Object, TriggeredFunc, Action.Key);
 			}
-			if (ReleasedFunc)
+			if (StartedFunc)
 			{
-				BindAction(Action.Value, ETriggerEvent::Completed, Object, ReleasedFunc, Action.Key);
+				BindAction(Action.Value, ETriggerEvent::Started, Object, StartedFunc, Action.Key);
 			}
-			if (HeldFunc)
+			if (OngoingFunc)
 			{
-				BindAction(Action.Value, ETriggerEvent::Triggered, Object, HeldFunc, Action.Key);
+				BindAction(Action.Value, ETriggerEvent::Ongoing, Object, OngoingFunc, Action.Key);
+			}
+			if (CanceledFunc)
+			{
+				BindAction(Action.Value, ETriggerEvent::Canceled, Object, CanceledFunc, Action.Key);
+			}
+			if (CompletedFunc)
+			{
+				BindAction(Action.Value, ETriggerEvent::Completed, Object, CompletedFunc, Action.Key);
 			}
 		}
 	} 

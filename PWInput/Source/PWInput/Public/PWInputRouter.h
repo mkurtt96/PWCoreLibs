@@ -8,10 +8,11 @@
 #include "Components/ActorComponent.h"
 #include "PWInputRouter.generated.h"
 
+class UInputMappingContext;
 class UPWInputConfig;
 class UPWEnhancedInputComponent;
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPWOnInputTagEvent, FGameplayTag, InputTag);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPWOnInputTagEvent, const FGameplayTag&, InputTag);
 
 UCLASS(ClassGroup=(Input), meta=(BlueprintSpawnableComponent))
 class PWINPUT_API UPWInputRouter : public UActorComponent
@@ -20,21 +21,32 @@ class PWINPUT_API UPWInputRouter : public UActorComponent
 
 public:
 	UPROPERTY(EditDefaultsOnly)
-	UPWInputConfig* InputConfig = nullptr;
+	TArray<UInputMappingContext*> InputMappingContexts;
+	UPROPERTY(EditDefaultsOnly)
+	UPWInputConfig* TaggedInputConfig = nullptr;
 
-	UPROPERTY(BlueprintAssignable)
-	FPWOnInputTagEvent OnStarted;
 	UPROPERTY(BlueprintAssignable)
 	FPWOnInputTagEvent OnTriggered;
 	UPROPERTY(BlueprintAssignable)
+	FPWOnInputTagEvent OnStarted;
+	UPROPERTY(BlueprintAssignable)
+	FPWOnInputTagEvent OnOngoing;
+	UPROPERTY(BlueprintAssignable)
+	FPWOnInputTagEvent OnCanceled;
+	UPROPERTY(BlueprintAssignable)
 	FPWOnInputTagEvent OnCompleted;
 
-	void BindAll(UPWEnhancedInputComponent* EIC);
+	void SetMappingContext(const ULocalPlayer* LocalPlayer);
+	void BindAll(UInputComponent* InputComponent);
 
 	UFUNCTION()
-	virtual void HandlePressed(const FGameplayTag Tag) { OnStarted.Broadcast(Tag); }
+	virtual void HandleTriggered(const FGameplayTag Tag) { OnTriggered.Broadcast(Tag); }
 	UFUNCTION()
-	virtual void HandleHeld(const FGameplayTag Tag) { OnTriggered.Broadcast(Tag); }
+	virtual void HandleStarted(const FGameplayTag Tag) { OnStarted.Broadcast(Tag); }
 	UFUNCTION()
-	virtual void HandleReleased(const FGameplayTag Tag) { OnCompleted.Broadcast(Tag); }
+	virtual void HandleOngoing(const FGameplayTag Tag) { OnOngoing.Broadcast(Tag); }
+	UFUNCTION()
+	virtual void HandleCanceled(const FGameplayTag Tag) { OnCanceled.Broadcast(Tag); }
+	UFUNCTION()
+	virtual void HandleCompleted(const FGameplayTag Tag) { OnCompleted.Broadcast(Tag); }
 };
