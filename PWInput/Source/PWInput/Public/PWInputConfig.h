@@ -7,6 +7,7 @@
 #include "Engine/DataAsset.h"
 #include "PWInputConfig.generated.h"
 
+class UInputMappingContext;
 /**
  * 
  */
@@ -19,6 +20,8 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	const class UInputAction* FindAbilityInputActionForTag(const FGameplayTag& InputTag, bool bLogNotFound);
 		
+	UPROPERTY(EditDefaultsOnly)
+	TArray<TObjectPtr<UInputMappingContext>> InputMappingContexts;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-	TMap<FGameplayTag, UInputAction*> AbilityInputActions;
+	TMap<FGameplayTag, TObjectPtr<UInputAction>> AbilityInputActions;
 };

@@ -23,12 +23,12 @@ public:
 	static ULogConfig* GetLogConfig();
 	
 	UPROPERTY(EditAnywhere, Config, BlueprintReadOnly, Category = "Debug Settings")
-	bool bDebugFunc = false;
+	bool bDebugFunc = true;
 
 	UPROPERTY(EditAnywhere, Config, BlueprintReadOnly, Category = "Debug Settings")
-	bool bDebugEconomy = false;
+	bool bDebugEconomy = true;
 
 	UPROPERTY(EditAnywhere, Config, BlueprintReadOnly, Category = "Debug Settings")
-	bool bDebugExtraDetails = false;
+	bool bDebugExtraDetails = true;
 	
 };

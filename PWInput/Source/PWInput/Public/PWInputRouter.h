@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "GameplayTagContainer.h"
-#include "InputActionValue.h"
 #include "Components/ActorComponent.h"
 #include "PWInputRouter.generated.h"
 
@@ -20,10 +19,8 @@ class PWINPUT_API UPWInputRouter : public UActorComponent
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(EditDefaultsOnly)
-	TArray<UInputMappingContext*> InputMappingContexts;
-	UPROPERTY(EditDefaultsOnly)
-	UPWInputConfig* TaggedInputConfig = nullptr;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
+	UPWInputConfig* InputConfig = nullptr;
 
 	UPROPERTY(BlueprintAssignable)
 	FPWOnInputTagEvent OnTriggered;
@@ -36,7 +33,7 @@ public:
 	UPROPERTY(BlueprintAssignable)
 	FPWOnInputTagEvent OnCompleted;
 
-	void SetMappingContext(const ULocalPlayer* LocalPlayer);
+	void SetMappingContext(const ULocalPlayer* LocalPlayer) const;
 	void BindAll(UInputComponent* InputComponent);
 
 	UFUNCTION()

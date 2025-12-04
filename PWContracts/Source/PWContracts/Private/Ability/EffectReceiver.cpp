@@ -1,7 +1,7 @@
 ﻿// copyright mkurtt96
 
 
-#include "Ability/PWEffectReceiverInterface.h"
+#include "Ability/EffectReceiver.h"
 
 
 // Add default functionality here for any IPWEffectReceiverInterface functions that are not pure virtual.

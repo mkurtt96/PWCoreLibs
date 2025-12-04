@@ -4,19 +4,19 @@
 
 #include "CoreMinimal.h"
 #include "UObject/Interface.h"
-#include "Effectable.generated.h"
+#include "Affectable.generated.h"
 
 UINTERFACE(BlueprintType)
-class UEffectable : public UInterface
+class UAffectable : public UInterface
 {
 	GENERATED_BODY()
 };
 
-class PWCONTRACTS_API IEffectable
+class PWCONTRACTS_API IAffectable
 {
 	GENERATED_BODY()
 
 public:
 	UFUNCTION(BlueprintNativeEvent, Category="Hit")
-	bool ApplyEffects(class USpellParams* Params);
+	bool ApplyEffects(class USpellParams* SpellParams);
 };

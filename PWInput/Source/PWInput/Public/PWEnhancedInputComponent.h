@@ -16,15 +16,13 @@ class PWINPUT_API UPWEnhancedInputComponent : public UEnhancedInputComponent
 public:
 
 	template<class UserClass, typename PressedFuncType, typename ReleasedFuncType, typename HeldFuncType>
-	void BindAbilityActions(const UPWInputConfig* InputConfig, UserClass* Object, PressedFuncType TriggeredFunc, ReleasedFuncType StartedFunc, HeldFuncType OngoingFunc, HeldFuncType CanceledFunc, HeldFuncType CompletedFunc);
+	void BindAbilityActions(const TMap<FGameplayTag, TObjectPtr<UInputAction>> AbilityInputActions, UserClass* Object, PressedFuncType TriggeredFunc, ReleasedFuncType StartedFunc, HeldFuncType OngoingFunc, HeldFuncType CanceledFunc, HeldFuncType CompletedFunc);
 };
 
 template <class UserClass, typename PressedFuncType, typename ReleasedFuncType, typename HeldFuncType>
-void UPWEnhancedInputComponent::BindAbilityActions(const UPWInputConfig* InputConfig, UserClass* Object, PressedFuncType TriggeredFunc, ReleasedFuncType StartedFunc, HeldFuncType OngoingFunc, HeldFuncType CanceledFunc, HeldFuncType CompletedFunc)
+void UPWEnhancedInputComponent::BindAbilityActions(const TMap<FGameplayTag, TObjectPtr<UInputAction>> AbilityInputActions, UserClass* Object, PressedFuncType TriggeredFunc, ReleasedFuncType StartedFunc, HeldFuncType OngoingFunc, HeldFuncType CanceledFunc, HeldFuncType CompletedFunc)
 {
-	check(InputConfig);
-
-	for (auto& Action : InputConfig->AbilityInputActions)
+	for (auto& Action : AbilityInputActions)
 	{
 		if (Action.Value && Action.Key.IsValid())
 		{
